@@ -9,7 +9,7 @@
 </p>
 
 <% if @user.profile_image.attached? %>
-  <%= image_tag @user.profile_image, size: "150x150" %>
+  <%= image_tag @user.profile_image %>
 <% else %>
   <p>No profile image uploaded</p>
 <% end %>

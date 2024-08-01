@@ -9,7 +9,7 @@ class UsersController < ApplicationController
   def create
     @user = User.new(user_params)
     if @user.save
-      UserMailer.registration_confirmation(@user).deliver_now
+      UserMailer.registration_confirmation(@user).deliver_later
       redirect_to @user, notice: 'ユーザー登録が完了しました。'
     else
       render :new
