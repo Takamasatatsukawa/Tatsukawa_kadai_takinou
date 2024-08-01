@@ -7,3 +7,9 @@
   <strong>Email:</strong>
   <%= @user.email %>
 </p>
+
+<% if @user.profile_image.attached? %>
+  <%= image_tag @user.profile_image, size: "150x150" %>
+<% else %>
+  <p>No profile image uploaded</p>
+<% end %>
