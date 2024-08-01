@@ -1,10 +1,9 @@
 <h1>Sign up</h1>
 
-<%= form_with(model: @user, local: true) do |f| %>
+<%= form_with model: @user, local: true, multipart: true do |f| %>
   <% if @user.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@user.errors.count, "error") %> prohibited this <%= @user.name %> from being saved:</h2>
-
       <ul>
         <% @user.errors.full_messages.each do |message| %>
           <li><%= message %></li>
@@ -37,7 +36,6 @@
      <%= f.label :profile_image, "Profile image" %>
      <%= f.file_field :profile_image %>
    </div>
-   
   <div class="actions">
     <%= f.submit "Create my account" %>
   </div>
