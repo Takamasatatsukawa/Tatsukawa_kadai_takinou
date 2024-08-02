@@ -11,7 +11,7 @@ class UsersController < ApplicationController
     if @user.save
       session[:user_id] = @user.id
       UserMailer.registration_confirmation(@user).deliver_later
-      redirect_to @user, notice: 'ユーザー登録が完了しました。'
+      redirect_to @user, notice: 'アカウントを登録しました。'
     else
       render :new
     end
